@@ -6,10 +6,10 @@ int main()
     string nombre, apellido;
     char codigo[6], menu;
     bool numero = false, letras = false;
-    int notas[9], n;
+    double notas[9], n, suma = 0;
     cout << "Ingrese su primer nombre" << endl;
     cin >> nombre;
-    cout << "Ingrese su primer apellidi" << endl;
+    cout << "Ingrese su primer apellido" << endl;
     cin >> apellido;
 
     cout << "Ingrese su codigo (Alfanumerico)" << endl;
@@ -20,7 +20,7 @@ int main()
 
     for (int i = 0; i < 6; i++)
     {
-        if (codigo[i] >= ' 0 ' && codigo[i] <= '9')
+        if (codigo[i] >= '0' && codigo[i] <= '9')
         {
             numero = true;
         }
@@ -54,20 +54,58 @@ int main()
 
                 for (int i = 0; i < 9; i++)
                 {
-                    if (notas[i] >= 0 && notas[i] <= 10)
+                    if (notas[i] < 0 && notas[i] > 10)
                     {
+                        return 1;
                     }
                 }
 
                 break;
             case 'b':
-                /* code */
+                cout << "Ingrese sus notas" << endl;
+                for (int i = 0; i < 9; i++)
+                {
+                    cin >> notas[i];
+                }
+
+                for (int i = 0; i < 9; i++)
+                {
+                    if (notas[i] < 0 && notas[i] > 10)
+                    {
+                        return 1;
+                    }
+                }
+                for (int i = 0; i < 9; i++)
+                {
+                    cout << notas[i] << endl;
+                }
+
                 break;
             case 'c':
-                /* code */
+                cout << "Ingrese sus notas" << endl;
+                for (int i = 0; i < 9; i++)
+                {
+                    cin >> notas[i];
+                }
+
+                for (int i = 0; i < 9; i++)
+                {
+                    if (notas[i] < 0 && notas[i] > 10)
+                    {
+                        return 1;
+                    }
+                }
+                for (int i = 0; i < 9; i++)
+                {
+                    suma += notas[i];
+                }
+
+                cout << "Tu promedio es: " << suma / 9 << endl;
+
                 break;
 
             default:
+
                 break;
             }
         } while (menu != 'd');
