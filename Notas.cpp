@@ -6,6 +6,7 @@ int main()
     string nombre, apellido;
     char codigo[6], menu;
     bool numero = false, letras = false;
+    int notas[9], n;
     cout << "Ingrese su primer nombre" << endl;
     cin >> nombre;
     cout << "Ingrese su primer apellidi" << endl;
@@ -43,7 +44,21 @@ int main()
             switch (menu)
             {
             case 'a':
-                /* code */
+
+                cout << "Ingrese sus notas" << endl;
+
+                for (int i = 0; i < 9; i++)
+                {
+                    cin >> notas[i];
+                }
+
+                for (int i = 0; i < 9; i++)
+                {
+                    if (notas[i] >= 0 && notas[i] <= 10)
+                    {
+                    }
+                }
+
                 break;
             case 'b':
                 /* code */
